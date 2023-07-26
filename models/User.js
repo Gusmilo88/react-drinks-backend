@@ -1,4 +1,4 @@
-const { hash } = require("bcryptjs");
+const { hash, compare } = require("bcryptjs");
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
