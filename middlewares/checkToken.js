@@ -12,7 +12,7 @@ module.exports = async (req, res, next) => {
         const token = req.headers.authorization;
         const decoded = verify(token, process.env.JWT_SECRET)
 
-        req.user = await User.findById(decoded.user.id).select("-password -token -checked -createdAt -updatedAt -_id -__v") //No queremos que muestre estos datos
+        req.user = await User.findById(decoded.user.id).select("-password -token -checked -createdAt -updatedAt -__v") //No queremos que muestre estos datos
 
         next()
 
